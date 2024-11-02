@@ -1,0 +1,273 @@
+/* Color Codes: Blue: #1b1f3b, Yellow: #ECD444, White: #EFF7FF, Green: #004F2D, Accent Blue: #1D7874, Black #000500 */
+
+:root {
+    --Black: #000500;
+    --Blue: #1b1f3b;
+    --Yellow: #ECD444;
+    --White: #EFF7FF;
+    --Green: #004F2D;
+    --AccentBlue: #1D7874;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Switzer', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(at top left, #000501, transparent 100%), 
+    radial-gradient(at bottom right, #000501, transparent 90%), 
+    radial-gradient(at bottom left, #000501, transparent 100%), 
+    linear-gradient(to bottom, #000501, #EFEFF0), 
+    url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+body > .trail {
+    position: absolute;
+    width: 80px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    pointer-events: none; /* Makes the images non-clickable */
+    opacity: 1; /* Optional: adjust opacity */
+    transition: transform 0.1s ease; /* Smooth transition for each image */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    z-index: 2;
+}
+
+body > #nav-container {
+    width: 100%;
+    height: 10vh;
+    position: inherit;
+    z-index: 2;
+}
+
+body > #nav-container > #navBar {
+    width: 92%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    /* background-color: green; */
+}
+
+body > #nav-container > #navBar > h4 {
+    font-family: 'Melodrama', serif;
+    cursor: pointer;
+    width: 50%;
+    color: var(--White);
+    font-size: 20px;
+}
+
+body > #nav-container > #navBar > ul {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+body > #nav-container > #navBar > ul > li {
+    cursor: pointer;
+    list-style: none;
+    color: var(--White);
+    opacity: 60%;
+    font-size: 17px;
+}
+
+body > #nav-container > #navBar > ul > li:hover {
+    opacity: 100%;
+}
+
+body > #nav-container > #navBar > ul > .nav-item {
+    margin-right: 8vw;
+}
+ 
+body > #main-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+body > #main-container > h4 {
+    margin-top: 5vh;
+    color: var(--White);
+    font-weight: lighter;
+    font-size: 22px;
+}
+
+body > #main-container > #emotions-grid {
+    width: 85%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: red; */
+}
+
+body > #main-container > #emotions-grid > .grid-item {
+    cursor: pointer;
+    width: 170px;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Required for positioning the pseudo-element */
+    overflow: hidden; /* Ensures text stays within the grid item */
+    transition: border-radius 0.5s ease, transform 0.5s ease; /* Add transition for smooth effect */
+    /* background-color: red; */
+}
+
+body > #main-container > #emotions-grid > .grid-item:hover {
+    border-radius: 10px;
+    transform: scale(1.02);
+}
+
+body > #main-container > #emotions-grid > .grid-item::after {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Transition for fade effect */
+    z-index: 0; /* Ensure it's below the text */
+}
+
+body > #main-container > #emotions-grid > .grid-item:hover::after {
+    opacity: 1; /* Fade in the overlay on hover */
+}
+
+body > #main-container > #emotions-grid > .grid-item > .overlay-text {
+    position: absolute; /* Position it absolutely within the grid item */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: var(--White);
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Transition for fade effect */
+    z-index: 1; /* Ensure it appears above the image */
+}
+
+
+body > #main-container > #emotions-grid > .grid-item:hover .overlay-text {
+    opacity: 1; /* Fade in on hover */
+}
+
+body > #main-container > #emotions-grid > #angry {
+    background: 100% 100% no-repeat url('/images/angry.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #emotions-grid > #happy {
+    background: 100% 100% no-repeat url('/images/happy.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #emotions-grid > #lonely {
+    background: 100% 100% no-repeat url('/images/lonely.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #emotions-grid > #demotivation {
+    background: 100% 100% no-repeat url('/images/demotivation.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #emotions-grid > #depression {
+    background: 100% 100% no-repeat url('/images/depression.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #emotions-grid > #greedy {
+    background: 100% 100% no-repeat url('/images/greedy.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #emotions-grid > #lust {
+    background: 100% 100% no-repeat url('/images/image-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #chat {
+    width: 80%;
+    height: 15vh;
+    background-color: var(--Green);
+    padding: 20px 30px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+body > #main-container > #chat > h4 {
+    width: 98%;
+    font-size: 16px;
+    text-align: center;
+    font-weight: lighter;
+    color: var(--White);
+}
+
+body > #main-container > #chat > button {
+    cursor: pointer;
+    margin-top: 2vh;
+    padding: 15px 20px;
+    background-color: var(--Black);
+    color: var(--White);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body > #main-container > #chat > button:hover {
+    background-color: var(--White);
+    color: var(--Black);
+}
+
+body > #footer-container {
+    width: 100%;
+    height: 20vh;
+    margin-top: 5vh;
+    background-color: var(--Black);
+    color: var(--White);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+body > #footer-container > #left {
+    margin-left: 2%;
+}
+
+body > #footer-container > #right {
+    margin-right: 2%;
+}

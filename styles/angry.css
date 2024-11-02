@@ -1,0 +1,185 @@
+/* Color Codes: Blue: #1b1f3b, Yellow: #ECD444, White: #EFF7FF, Green: #004F2D, Accent Blue: #1D7874, Black #000500 */
+
+:root {
+    --Black: #000500;
+    --Blue: #1b1f3b;
+    --Yellow: #ECD444;
+    --White: #EFF7FF;
+    --Green: #004F2D;
+    --AccentBlue: #1D7874;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Switzer', sans-serif;
+    scroll-behavior: smooth;
+}
+
+hr {
+    width: 90%;
+    margin: 2vh 0;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(at top left, #000501, transparent 100%), 
+    radial-gradient(at bottom right, #000501, transparent 90%), 
+    radial-gradient(at bottom left, #000501, transparent 100%), 
+    linear-gradient(to bottom, #000501, #EFEFF0), 
+    url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+body > .trail {
+    position: absolute;
+    width: 80px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    pointer-events: none; /* Makes the images non-clickable */
+    opacity: 1; /* Optional: adjust opacity */
+    transition: transform 0.1s ease; /* Smooth transition for each image */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    z-index: 2;
+}
+
+body > #nav-container {
+    width: 100%;
+    height: 10vh;
+    position: inherit;
+    z-index: 2;
+}
+
+body > #nav-container > #navBar {
+    width: 92%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    /* background-color: green; */
+}
+
+body > #nav-container > #navBar > h4 {
+    font-family: 'Melodrama', serif;
+    cursor: pointer;
+    width: 50%;
+    color: var(--White);
+    font-size: 20px;
+}
+
+body > #nav-container > #navBar > ul {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+body > #nav-container > #navBar > ul > li {
+    cursor: pointer;
+    list-style: none;
+    color: var(--White);
+    opacity: 60%;
+    font-size: 17px;
+}
+
+body > #nav-container > #navBar > ul > li:hover {
+    opacity: 100%;
+}
+
+body > #nav-container > #navBar > ul > .nav-item {
+    margin-right: 8vw;
+}
+
+body > #main-container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+body > #main-container > #table-container {
+    width: 70%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: green; */
+}
+
+body > #main-container > #table-container > #verse-div {
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 100%;
+}
+
+body > #main-container > #table-container > .rows {
+    width: 90%;
+    color: var(--White);
+    opacity: 80%;
+    right: 0;
+    text-align: justify;
+    margin: 3vh 0;
+    font-size: 17px;
+}
+
+body > #main-container > #table-container > #button-container {
+    width: 90%;
+    height: 10vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    /* background-color: red; */
+}
+
+body > #main-container > #table-container > #button-container > i {
+    cursor: pointer;
+    color: var(--White);
+    transition: transform 0.5s ease;
+}
+
+body > #main-container > #table-container > #button-container > i:hover {
+    transform: scale(1.2);
+}
+
+body > #main-container > #table-container > #button-container > #next {
+    margin-left: 40px;
+}
+
+body > #main-container > #img-container {
+    width: 40%;
+    height: max-content;
+    /* background-color: red; */
+}
+
+body > #main-container > #img-container > .img-1 {
+    right: 0;
+    margin-right: -10%;
+    height: max-content;
+    z-index: 1;
+}
+
+body > #footer-container {
+    width: 100%;
+    height: 20vh;
+    background-color: var(--Black);
+    color: var(--White);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+body > #footer-container > #left {
+    margin-left: 2%;
+}
+
+body > #footer-container > #right {
+    margin-right: 2%;
+}

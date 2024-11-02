@@ -1,0 +1,199 @@
+/* Color Codes: Blue: #1b1f3b, Yellow: #ECD444, White: #EFF7FF, Green: #004F2D, Accent Blue: #1D7874, Black #000500 */
+
+:root {
+    --Black: #000500;
+    --Blue: #1b1f3b;
+    --Yellow: #ECD444;
+    --White: #EFF7FF;
+    --Green: #004F2D;
+    --AccentBlue: #1D7874;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Switzer', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(at top left, #000501, transparent 100%), 
+    radial-gradient(at bottom right, #000501, transparent 90%), 
+    radial-gradient(at bottom left, #000501, transparent 100%), 
+    linear-gradient(to bottom, #000501, #EFEFF0), 
+    url(https://grainy-gradients.vercel.app/noise.svg);
+}
+
+body > .trail {
+    position: absolute;
+    width: 80px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    pointer-events: none; /* Makes the images non-clickable */
+    opacity: 1; /* Optional: adjust opacity */
+    transition: transform 0.1s ease; /* Smooth transition for each image */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    z-index: 2;
+}
+
+body > #nav-container {
+    width: 100%;
+    height: 10vh;
+    position: inherit;
+    z-index: 2;
+}
+
+body > #nav-container > #navBar {
+    width: 92%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    /* background-color: green; */
+}
+
+body > #nav-container > #navBar > h4 {
+    font-family: 'Melodrama', serif;
+    cursor: pointer;
+    width: 50%;
+    color: var(--White);
+    font-size: 20px;
+}
+
+body > #nav-container > #navBar > ul {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+body > #nav-container > #navBar > ul > li {
+    cursor: pointer;
+    list-style: none;
+    color: var(--White);
+    opacity: 60%;
+    font-size: 17px;
+}
+
+body > #nav-container > #navBar > ul > li:hover {
+    opacity: 100%;
+}
+
+body > #nav-container > #navBar > ul > .nav-item {
+    margin-right: 8vw;
+}
+ 
+body > #main-container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    /* background-color: red; */
+}
+
+body > #main-container > .img-1 {
+    position: absolute;
+    right: 0;
+    margin-right: -15%;
+    height: 84vh;
+    z-index: 1;
+}
+
+body > #main-container > .img-2 {
+    position: absolute;
+    left: 0;
+    margin-left: -15%;
+    height: 84vh;
+    z-index: 1;
+}
+
+body > #main-container > #main-content {
+    background-size: 100% 100%;
+    width: 70%;
+    height: 70vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--White);
+    z-index: 2;
+}
+
+body > #main-container > #main-content > h1 {
+    font-family: 'Melodrama', serif;
+    font-weight: lighter;
+    font-size: 120px;
+    margin-bottom: 4vh;
+    background: none;
+}
+
+body > #main-container > #main-content > h4 {
+    width: 60%;
+    font-weight: lighter;
+    font-size: 20px;
+    background: none;
+}
+
+body > #main-container > #main-content > button {
+    cursor: pointer;
+    margin-top: 5vh;
+    padding: 15px 20px;
+    background-color: var(--Black);
+    color: var(--White);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body > #main-container > #main-content > button:hover {
+    background-color: var(--White);
+    color: var(--Black);
+}
+
+body > #footer-container {
+    width: 100%;
+    height: 20vh;
+    background-color: var(--Black);
+    color: var(--White);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 100px;
+    z-index: 2;
+}
+
+body > #footer-container > #left {
+    margin-left: 2%;
+}
+
+body > #footer-container > #right {
+    margin-right: 2%;
+}
+
+@keyframes wavySwirl {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
