@@ -3,10 +3,10 @@ const mysql = require('mysql');
 
 // Create MySQL connection
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',        // replace with your MySQL username
-    password: '',        // replace with your MySQL password
-    database: 'gita'     // replace with your database name
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
 // Connect to the database
