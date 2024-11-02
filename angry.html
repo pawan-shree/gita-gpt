@@ -52,7 +52,7 @@
     let currentId = 1; // Start with the first ID
 
     function fetchData(id) {
-        fetch(`/api/angry?id=${id}`)
+        fetch(`/api/angryApi?id=${id}`)
             .then(response => response.json())
             .then(data => {
                 if (data && data.id) {
@@ -74,7 +74,7 @@
 
     document.getElementById('next').addEventListener('click', () => {
         // Fetch the maximum ID dynamically here (you need to implement this)
-        fetch(`/api/angry/max-id`)
+        fetch(`/api/angryApi/max-id`)
             .then(response => response.json())
             .then(maxData => {
                 const maxId = maxData.maxId || 1; // Fallback to 1 if maxId is not available
@@ -85,7 +85,7 @@
 
     document.getElementById('prev').addEventListener('click', () => {
         // Fetch the maximum ID dynamically here (you need to implement this)
-        fetch(`/api/angry/max-id`)
+        fetch(`/api/angryApi/max-id`)
             .then(response => response.json())
             .then(maxData => {
                 const maxId = maxData.maxId || 1; // Fallback to 1 if maxId is not available
