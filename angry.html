@@ -12,43 +12,90 @@
   />
   </head>
 
-  <body>
-    <div id="nav-container">
-      <div id="navBar">
+  <div id="nav-container">
+    <div id="navBar">
         <h4 id="logo">GG</h4>
         <ul>
-          <li class="nav-item li-item" id="about">About</li>
-          <li class="nav-item li-item" id="contact">Contact</li>
-          <li class="nav-item-last li-item" id="devs">Devs</li>
+            <li class="nav-item li-item" id="about">About</li>
+            <li class="nav-item li-item" id="contact">Contact</li>
+            <li class="nav-item-last li-item" id="krishna">Devs</li>
         </ul>
-      </div>
     </div>
+</div>
 
-    <div id="main-container">
-        <div id="table-container">
-            <div id="verse-div" class="rows">Verse <span id="verse"></span></div>
-            <hr>
-            <div id="sanskrit" class="rows"></div>
-            <div id="english" class="rows"></div>
-            <div id="translation" class="rows"></div>
-            <div id="purport" class="rows"></div>
+<div id="main-container">
+    <div id="table-container">
+        <div id="verse-div" class="rows">Verse <span id="verse"></span></div>
+        <hr>
+        <div id="sanskrit" class="rows"></div>
+        <div id="english" class="rows"></div>
+        <div id="translation" class="rows"></div>
+        <div id="purport" class="rows"></div>
 
-            <div id="button-container">
-                <i id="prev" class="fa-solid fa-circle-chevron-left fa-xl"></i>
-                <i id="next" class="fa-solid fa-circle-chevron-right fa-xl"></i>
-            </div>
-        </div>
-
-        <div id="img-container">
-            <img src="/images/cursor-1-nobg-right.png" alt="" class="img-1">
+        <div id="button-container">
+            <i class="fa-solid fa-circle-chevron-left fa-xl" id="prev"></i>
+            <i id="next" class="fa-solid fa-circle-chevron-right fa-xl"></i>
         </div>
     </div>
 
-    <div id="footer-container">
-        <div id="left">Made with ❤ by ASAP</div>
-        <div id="right">© 2024 GitaGPT - All Rights Reserved</div>
+    <div id="img-container">
+        <img src="/images/cursor-1-nobg-right.png" alt="" class="img-1">
     </div>
+</div>
 
-    <script src="/scripts/angry.js"></script>
+<div id="footer-container">
+    <div id="left">Made with ❤ by ASAP</div>
+    <div id="right">© 2024 GitaGPT - All Rights Reserved</div>
+</div>
+
+<script>
+    let currentId = 1; // Start with the first ID
+
+    function fetchData(id) {
+        fetch(`/api/angry?id=${id}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.id) {
+                    document.getElementById('verse').textContent = data.id;
+                    document.getElementById('sanskrit').textContent = data.Sanskrit;
+                    document.getElementById('english').textContent = data.English;
+                    document.getElementById('translation').textContent = data.Translation;
+                    document.getElementById('purport').textContent = data.Purport;
+                } else {
+                    document.getElementById('verse').textContent = 'No data found for this ID.';
+                    document.getElementById('sanskrit').textContent = '';
+                    document.getElementById('english').textContent = '';
+                    document.getElementById('translation').textContent = '';
+                    document.getElementById('purport').textContent = '';
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        // Fetch the maximum ID dynamically here (you need to implement this)
+        fetch(`/api/angry/max-id`)
+            .then(response => response.json())
+            .then(maxData => {
+                const maxId = maxData.maxId || 1; // Fallback to 1 if maxId is not available
+                currentId = (currentId % maxId) + 1; // Loop around
+                fetchData(currentId);
+            });
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        // Fetch the maximum ID dynamically here (you need to implement this)
+        fetch(`/api/angry/max-id`)
+            .then(response => response.json())
+            .then(maxData => {
+                const maxId = maxData.maxId || 1; // Fallback to 1 if maxId is not available
+                currentId = currentId === 1 ? maxId : currentId - 1; // Loop around
+                fetchData(currentId);
+            });
+    });
+
+    // Initial fetch
+    fetchData(currentId);
+</script>
   </body>
 </html>
