@@ -24,7 +24,7 @@ let maxId = 1; // To hold the maximum ID
 let currentTable = 'angry'; // Default table
 
 function fetchData(id) {
-    fetch(`/api/fetchData?table=${currentTable}&id=${id}`)
+    fetch(`http://localhost:3000/api/${currentTable}/data/${id}`)
         .then(response => response.json())
         .then(data => {
             if (Object.keys(data).length === 0) {
@@ -42,7 +42,7 @@ function fetchData(id) {
 }
 
 function fetchMaxId() {
-    fetch(`/api/maxId?table=${currentTable}`)
+    fetch(`http://localhost:3000/api/${currentTable}/max-id`)
         .then(response => response.json())
         .then(data => {
             maxId = data.maxId; // Set maxId from response
@@ -72,7 +72,7 @@ document.getElementById('prev').addEventListener('click', () => {
     fetchData(currentId);
 });
 
-// Table change event listener (if you implement a dropdown in your HTML)
+// Table change event listener
 document.getElementById('tableDropdown').addEventListener('change', (event) => {
     currentTable = event.target.value; // Update current table based on selection
     currentId = 1; // Reset to the first ID for the new table
