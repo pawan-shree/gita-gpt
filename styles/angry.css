@@ -237,6 +237,10 @@ body > #footer-container > #right {
         margin-bottom: 0px;
     }
 
+    body > #main-container > #table-container > #button-container {
+        justify-content: center;
+    }
+
     body > #footer-container {
         margin-top: 0px;
     }
