@@ -183,9 +183,6 @@ body > #main-container > #card-container > .card > .name {
 }
 
 body > #main-container > #card-container > .card:hover .name {
-    display: flex;
-    width: 40%;
-    justify-content: space-between;
     opacity: 1; /* Fade in on hover */
 }
 
