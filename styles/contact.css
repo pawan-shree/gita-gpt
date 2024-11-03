@@ -228,3 +228,102 @@ body > #footer-container > #left {
 body > #footer-container > #right {
     margin-right: 2%;
 }
+
+/* Responsiveness */
+@media screen and (max-width: 700px) {
+    body > #nav-container > #navBar > h4 {
+        font-size: 16px;
+    }
+
+    body > #nav-container > #navBar > ul > li {
+        font-size: 14px;
+    }
+
+    body > #main-container {
+        margin-top: 50px;
+    }
+
+    body > #main-container > #contact-container {
+        flex-direction: column;
+    }
+
+    body > #main-container > #contact-container > #left {
+        width: 96%;
+        height: 50vh;
+        margin-left: 0%;
+        margin-right: 2%;
+        margin-bottom: 5vh;
+    }
+
+    body > #main-container > #contact-container > #left > h2 {
+        font-size: 25px;
+    }
+
+    body > #main-container > #contact-container > #left > input, textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    body > #main-container > #contact-container > #left > button {
+        width: 30%;
+    }
+
+    body > #main-container > #contact-container > #right {
+        width: 96%;
+        height: 45vh;
+        margin-bottom: 1vh;
+    }
+
+    body > #footer-container {
+        margin-top: 0px;
+    }
+
+    body > #footer-container > #left {
+        font-size: 12px;
+        width: 40%;
+        text-align: left;
+        margin-left: 4%;
+    }
+
+    body > #footer-container > #right {
+        font-size: 12px;
+        width: 40%;
+        text-align: right;
+        margin-right: 4%;
+    } 
+}
+
+@media screen and (max-width: 650px) {
+    body > #main-container {
+        margin-top: -2vh;
+        margin-bottom: -2vh;
+        height: 70vh;
+    }
+
+    body > #main-container > #contact-container {
+        flex-direction: column;
+    }
+
+    body > #main-container > #contact-container > #left {
+        width: 96%;
+        height: 40vh;
+        margin-left: 0%;
+        margin-right: 2%;
+        margin-bottom: 5vh;
+    }
+
+    body > #main-container > #contact-container > #left > h2 {
+        font-size: 15px;
+    }
+
+    body > #main-container > #contact-container > #left > input, textarea {
+        width: 100%;
+        padding: 5px;
+        font-size: 9px;
+    }
+
+    body > #main-container > #contact-container > #left {
+        height: 35vh;
+    }
+}

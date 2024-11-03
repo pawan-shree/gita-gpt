@@ -278,3 +278,94 @@ body > #footer-container > #left {
 body > #footer-container > #right {
     margin-right: 2%;
 }
+
+/*Responsive design for mobile devices*/
+@media (max-width: 800px) {
+    body > #nav-container > #navBar > h4 {
+        font-size: 16px;
+    }
+
+    body > #nav-container > #navBar > ul > li {
+        font-size: 14px;
+    }
+
+    body > #main-container {
+    
+    }
+
+    body > #main-container > #card-container {
+        flex-direction: column;
+    }
+
+    body > #main-container > #card-container > .card {
+        width: 80%;
+        height: 60vh;
+        margin-bottom: 1vh;
+    }
+
+    body > #main-container > #card-container > .card > .overlay-text {
+        opacity: 1;    
+    }
+    
+    body > #main-container > #card-container > .card > .name {
+        opacity: 1;
+    }
+
+    body > #main-container > #card-container > #pawan {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/pawan.jpg');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #card-container > #aahana {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/aahana.jpg');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #card-container > #shridhar {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/shree.jpg');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #card-container > #alisha {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/alisha.jpg');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #footer-container {
+        margin-top: 0px;
+    }
+
+    body > #footer-container > #left {
+        font-size: 12px;
+        width: 40%;
+        text-align: left;
+        margin-left: 4%;
+    }
+
+    body > #footer-container > #right {
+        font-size: 12px;
+        width: 40%;
+        text-align: right;
+        margin-right: 4%;
+    } 
+}
+
+@media (max-width: 400px) {
+    
+}

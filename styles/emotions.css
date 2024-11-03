@@ -288,3 +288,134 @@ body > #footer-container > #left {
 body > #footer-container > #right {
     margin-right: 2%;
 }
+
+
+/*Responsive design for mobile devices*/
+@media (max-width: 800px) {
+    
+}
+
+@media (max-width: 500px) {
+    body > #nav-container > #navBar > h4 {
+        font-size: 16px;
+    }
+
+    body > #nav-container > #navBar > ul > li {
+        font-size: 14px;
+    }
+
+    body > #main-container {
+        height: max-content;
+    }
+
+    body > #main-container > #emotions-grid {
+        height: max-content;
+        flex-direction: column;
+        margin: 3vh 0;
+    }
+
+    body > #main-container > #emotions-grid > .grid-item {
+        width: 90%;
+        height: 20vh;
+        margin-bottom: 2vh;
+        border-radius: 10px;
+    }
+
+    body > #main-container > #emotions-grid > .grid-item > .overlay-text {
+        opacity: 1;
+    }
+
+    body > #main-container > #emotions-grid > #angry {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/angry.png');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #emotions-grid > #happy {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/angry.png');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #emotions-grid > #lonely {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/lonely.png');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #emotions-grid > #demotivation {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/demotivation.png');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #emotions-grid > #depression {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/depression.png');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #emotions-grid > #greedy {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/greedy.jpg');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #emotions-grid > #lust {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 100% 100% no-repeat url('/images/lust.png');
+          background-size: cover;
+          background-position: center;
+    }
+
+    body > #main-container > #chat > h4 {
+        font-size: 14px;
+    }
+
+    body > #main-container > #chat > button:hover {
+        background-color: var(--Black);
+        color: var(--White);
+    }
+
+    body > #footer-container {
+        margin-top: 0px;
+    }
+
+    body > #footer-container > #left {
+        font-size: 12px;
+        width: 40%;
+        text-align: left;
+        margin-left: 4%;
+    }
+
+    body > #footer-container > #right {
+        font-size: 12px;
+        width: 40%;
+        text-align: right;
+        margin-right: 4%;
+    } 
+}
+
+@media (max-width: 400px) {
+    
+}

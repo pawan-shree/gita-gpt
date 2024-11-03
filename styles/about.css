@@ -129,15 +129,6 @@ body > #main-container > #left > p {
     font-size: 20px;
 }
 
-body > #main-container > #right {
-    width: 46%;
-    height: 65vh;
-    background: 100% 100% no-repeat url('/images/about.png');
-    background-size: cover;
-    background-position: center;
-    /* background-color: blue; */
-}
-
 body > #main-container > #left > button {
     cursor: pointer;
     margin-top: 5vh;
@@ -153,6 +144,15 @@ body > #main-container > #left > button {
 body > #main-container > #left > button:hover {
     background-color: var(--Green);
     color: var(--White);
+}
+
+body > #main-container > #right {
+    width: 46%;
+    height: 65vh;
+    background: 100% 100% no-repeat url('/images/about.png');
+    background-size: cover;
+    background-position: center;
+    /* background-color: blue; */
 }
 
 body > #footer-container {
@@ -175,4 +175,73 @@ body > #footer-container > #left {
 
 body > #footer-container > #right {
     margin-right: 2%;
+}
+
+/*Responsive design for mobile devices*/
+@media (max-width: 800px) {
+    
+}
+
+@media (max-width: 1000px) {
+    body > #nav-container > #navBar > h4 {
+        font-size: 16px;
+    }
+
+    body > #nav-container > #navBar > ul > li {
+        font-size: 14px;
+    }
+
+    body > #main-container {
+        height: max-content;
+        flex-direction: column-reverse;
+        margin-bottom: 5vh;
+    }
+
+    body > #main-container > #left {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+
+    body > #main-container > #left > p {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    body > #main-container > #left > button:hover {
+        background-color: var(--White);
+        color: var(--Black);
+    }
+
+    body > #main-container > #right {
+        width: 80%;
+        height: 30vh;
+        margin-bottom: 4vh;
+        /* background-color: red; */
+    }
+
+    body > #footer-container {
+        margin-top: 0px;
+    }
+
+    body > #footer-container > #left {
+        font-size: 12px;
+        width: 40%;
+        text-align: left;
+        margin-left: 4%;
+    }
+
+    body > #footer-container > #right {
+        font-size: 12px;
+        width: 40%;
+        text-align: right;
+        margin-right: 4%;
+    } 
+}
+
+@media (max-width: 400px) {
+    
 }

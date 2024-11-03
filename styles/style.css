@@ -232,7 +232,7 @@ body > #main-container > #main-content > button:hover {
 }
 
 body > #footer-container {
-    width: 100%;
+    width: 100vw;
     height: 20vh;
     background-color: var(--Black);
     color: var(--White);
@@ -263,4 +263,73 @@ body > #footer-container > #right {
     100% {
         background-position: 0% 0%;
     }
+}
+
+/*Responsive design for mobile devices*/
+@media (max-width: 800px) {
+    
+}
+
+@media (max-width: 900px) {
+    body > #nav-container > #navBar > h4 {
+        font-size: 16px;
+    }
+
+    body > #nav-container > #navBar > ul > li {
+        font-size: 14px;
+    }
+
+    body > #main-container {
+        background:  linear-gradient(
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.6)
+          ), 10% 100% url('/images/cursor-1-nobg-left.png');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    body > #main-container > .img-1 {
+        display: none;
+    }
+    
+    body > #main-container > .img-2 {
+        display: none;
+    }
+
+    body > #main-container > #main-content > h1 {
+        font-size: 80px;
+        margin-bottom: 2vh;
+    }
+
+    body > #main-container > #main-content > h4 {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    body > #main-container > #main-content > button {
+        background-color: var(--White);
+        color: var(--Black);
+    }
+
+    body > #footer-container {
+        margin-top: 0px;
+    }
+
+    body > #footer-container > #left {
+        font-size: 12px;
+        width: 40%;
+        text-align: left;
+        margin-left: 4%;
+    }
+
+    body > #footer-container > #right {
+        font-size: 12px;
+        width: 40%;
+        text-align: right;
+        margin-right: 4%;
+    } 
+}
+
+@media (max-width: 400px) {
+    
 }
