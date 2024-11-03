@@ -1,3 +1,16 @@
+// JavaScript for Loading and Fade-In Effect
+window.addEventListener('load', function () {
+    const loadingContainer = document.getElementById('loading-container');
+    
+    setTimeout(() => {
+        loadingContainer.style.display = 'none'; // Hide the loading animation
+        document.body.classList.remove('loading'); // Remove loading class
+
+        // Fade-in effect by adding a new class to the body
+        document.body.style.animation = "fadeIn 1s ease forwards";
+    }, 3000); // Match this duration to the animation time in CSS
+});
+
 const getStarted = document.getElementById("get-started");
 const logo = document.getElementById("logo");
 const about = document.getElementById("about");

@@ -9,14 +9,6 @@
     --AccentBlue: #1D7874;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Switzer', sans-serif;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-}
-
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
@@ -31,6 +23,19 @@
 body {
     opacity: 0; /* Start invisible */
     animation: fadeIn 0.5s ease-in forwards; /* Fade in over 1.5 seconds */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Switzer', sans-serif;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+hr {
+    width: 90%;
+    margin: 2vh 0;
 }
 
 body {
@@ -106,26 +111,21 @@ body > #nav-container > #navBar > ul > li:hover {
 body > #nav-container > #navBar > ul > .nav-item {
     margin-right: 8vw;
 }
- 
+
 body > #main-container {
-    width: 100%;
-    height: 80vh;
+    overflow: hidden; /* Hide the part of the circle that goes outside the main-container-1 */
+    width: 96%;
+    height: 65vh;
     display: flex;
-    flex-direction: column;
+    justify-self: center;
     align-items: center;
-    justify-content: center;
+    border-radius: 20px;
+    margin-top: 35px;
     /* background-color: red; */
 }
 
-body > #main-container > h4 {
-    margin-top: 5vh;
-    color: var(--White);
-    font-weight: lighter;
-    font-size: 24px;
-}
-
-body > #main-container > #emotions-grid {
-    width: 85%;
+body > #main-container > #card-container {
+    width: 100%;
     height: 60%;
     display: flex;
     justify-content: space-evenly;
@@ -133,10 +133,10 @@ body > #main-container > #emotions-grid {
     /* background-color: red; */
 }
 
-body > #main-container > #emotions-grid > .grid-item {
+body > #main-container > #card-container > .card {
     cursor: pointer;
-    width: 170px;
-    height: 35vh;
+    width: 22%;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,130 +147,123 @@ body > #main-container > #emotions-grid > .grid-item {
     /* background-color: red; */
 }
 
-body > #main-container > #emotions-grid > .grid-item:hover {
+body > #main-container > #card-container > .card:hover {
     border-radius: 10px;
-    transform: scale(1.02);
 }
 
-body > #main-container > #emotions-grid > .grid-item::after {
+body > #main-container > #card-container > .card::after {
     content: ""; /* Required for pseudo-element */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
     opacity: 0; /* Start invisible */
     transition: opacity 0.5s ease; /* Transition for fade effect */
     z-index: 0; /* Ensure it's below the text */
 }
 
-body > #main-container > #emotions-grid > .grid-item:hover::after {
+body > #main-container > #card-container > .card:hover::after {
     opacity: 1; /* Fade in the overlay on hover */
 }
 
-body > #main-container > #emotions-grid > .grid-item > .overlay-text {
+body > #main-container > #card-container > .card > .name {
     position: absolute; /* Position it absolutely within the grid item */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the text */
+    top: 0%;
+    left: 0%;
+    padding: 5px 7px;
+    margin: 15px 0 0 15px;
     color: var(--White);
-    font-size: 20px; /* Adjust font size as needed */
+    font-size: 15px;
     font-weight: bold;
     opacity: 0; /* Start invisible */
     transition: opacity 0.5s ease; /* Transition for fade effect */
     z-index: 1; /* Ensure it appears above the image */
 }
 
-
-body > #main-container > #emotions-grid > .grid-item:hover .overlay-text {
+body > #main-container > #card-container > .card:hover .name {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
     opacity: 1; /* Fade in on hover */
 }
 
-body > #main-container > #emotions-grid > #angry {
-    background: 100% 100% no-repeat url('/images/angry.png');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #emotions-grid > #happy {
-    background: 100% 100% no-repeat url('/images/happy.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #emotions-grid > #lonely {
-    background: 100% 100% no-repeat url('/images/lonely.png');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #emotions-grid > #demotivation {
-    background: 100% 100% no-repeat url('/images/demotivation.png');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #emotions-grid > #depression {
-    background: 100% 100% no-repeat url('/images/depression.png');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #emotions-grid > #greedy {
-    background: 100% 100% no-repeat url('/images/greedy.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #emotions-grid > #lust {
-    background: 100% 100% no-repeat url('/images/lust.png');
-    background-size: cover;
-    background-position: center;
-}
-
-body > #main-container > #chat {
-    width: 80%;
-    height: 15vh;
-    background-color: var(--Green);
-    padding: 20px 30px;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
-
-body > #main-container > #chat > h4 {
-    width: 98%;
-    font-size: 16px;
-    text-align: center;
-    font-weight: lighter;
+body > #main-container > #card-container > .card > .overlay-text {
+    position: absolute; /* Position it absolutely within the grid item */
+    bottom: 0%;
+    right: 0%;
+    padding: 5px 7px;
+    margin: 0 15px 15px 0;
     color: var(--White);
+    font-size: 12px; /* Adjust font size as needed */
+    background-color: rgba(79, 78, 78, 0.7);
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Transition for fade effect */
+    z-index: 1; /* Ensure it appears above the image */
+    border-radius: 5px;
 }
 
-body > #main-container > #chat > button {
-    cursor: pointer;
-    margin-top: 2vh;
-    padding: 15px 20px;
+body > #main-container > #card-container > .card:hover .overlay-text {
+    opacity: 1; /* Fade in on hover */
+}
+
+body > #main-container > #card-container > .card > .overlay-text > img {
+    width: 20px;
+    margin: 0 2px;
+}
+
+body > #main-container > #card-container > .card > .overlay-text > .twitter, .link {
     background-color: var(--Black);
-    color: var(--White);
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-body > #main-container > #chat > button:hover {
-    background-color: var(--White);
-    color: var(--Black);
+body > #main-container > #card-container > #pawan {
+    background: 100% 100% no-repeat url('/images/pawan.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #card-container > #pawan:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+body > #main-container > #card-container > #aahana {
+    background: 100% 100% no-repeat url('/images/aahana.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #card-container > #aahana:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+body > #main-container > #card-container > #shridhar {
+    background: 100% 100% no-repeat url('/images/shree.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #card-container > #shridhar:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+body > #main-container > #card-container > #alisha {
+    background: 100% 100% no-repeat url('/images/alisha.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body > #main-container > #card-container > #alisha:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 body > #footer-container {
     width: 100%;
     height: 20vh;
-    margin-top: 5vh;
     background-color: var(--Black);
     color: var(--White);
     display: flex;

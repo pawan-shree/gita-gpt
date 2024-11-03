@@ -1,3 +1,7 @@
+window.addEventListener("load", function () {
+    document.body.style.opacity = "1";
+});
+
 const logo = document.getElementById("logo");
 const about = document.getElementById("about");
 const contact = document.getElementById("contact");

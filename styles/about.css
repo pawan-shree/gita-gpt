@@ -9,10 +9,27 @@
     --AccentBlue: #1D7874;
 }
 
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in to the body */
+body {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.5s ease-in forwards; /* Fade in over 1.5 seconds */
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Switzer', sans-serif;
+    scrollbar-width: none;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }

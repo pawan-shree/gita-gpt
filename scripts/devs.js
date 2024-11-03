@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     document.body.style.opacity = "1";
 });
 
@@ -6,7 +6,6 @@ const logo = document.getElementById("logo");
 const about = document.getElementById("about");
 const contact = document.getElementById("contact");
 const devs = document.getElementById("devs");
-const devsBtn = document.getElementById("devs-btn");
 
 logo.addEventListener('click', () => {
     location.href = 'index.html';
@@ -21,9 +20,5 @@ contact.addEventListener('click', () => {
 });
 
 devs.addEventListener('click', () => {
-    location.href = 'devs.html';
-});
-
-devsBtn.addEventListener('click', () => {
     location.href = 'devs.html';
 });
