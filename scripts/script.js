@@ -1,7 +1,7 @@
 // JavaScript for Loading and Fade-In Effect
 window.addEventListener('load', function () {
     const loadingContainer = document.getElementById('loading-container');
-    
+
     setTimeout(() => {
         loadingContainer.style.display = 'none'; // Hide the loading animation
         document.body.classList.remove('loading'); // Remove loading class
@@ -36,7 +36,7 @@ contact.addEventListener('click', () => {
 devs.addEventListener('click', () => {
     location.href = 'devs.html';
 });
- 
+
 // Cursor Trail 
 const trails = document.querySelectorAll(".trail");
 
@@ -62,7 +62,7 @@ document.addEventListener("mousemove", (event) => {
     if (fadeOutTimeout) {
         clearTimeout(fadeOutTimeout);
     }
-    
+
     trails.forEach((trail) => {
         trail.style.opacity = 1; // Reset opacity to fully visible
     });
@@ -113,4 +113,16 @@ function animateTrail() {
 window.onload = () => {
     animateTrail();
 };
+
+
+//Vercel Analytics
+(function (w, d, u) {
+    w.vercelAnalytics = function () {
+        var t = d.createElement("script");
+        t.src = "https://analytics.vercel-insights.com/script.js";
+        t.defer = true;
+        d.head.appendChild(t);
+    };
+    w.vercelAnalytics();
+})(window, document);
 
