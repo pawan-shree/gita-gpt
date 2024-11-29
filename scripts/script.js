@@ -114,15 +114,3 @@ window.onload = () => {
     animateTrail();
 };
 
-
-//Vercel Analytics
-(function (w, d, u) {
-    w.vercelAnalytics = function () {
-        var t = d.createElement("script");
-        t.src = "https://analytics.vercel-insights.com/script.js";
-        t.defer = true;
-        d.head.appendChild(t);
-    };
-    w.vercelAnalytics();
-})(window, document);
-
